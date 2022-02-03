@@ -13,6 +13,7 @@ public class MovementComponent : MonoBehaviour
     private PlayerController playerController;
     Rigidbody rigidbody;
     Animator playerAnimator;
+    public GameObject followTarget;
 
     // References
     Vector2 inputVector = Vector2.zero;
@@ -41,6 +42,7 @@ public class MovementComponent : MonoBehaviour
 
     void Update()
     {
+        //movement
         if (playerController.isJumping) return;
         if (!(inputVector.magnitude > 0)) moveDirection = Vector3.zero;
 
@@ -50,6 +52,27 @@ public class MovementComponent : MonoBehaviour
         Vector3 movementDirection = moveDirection * (currentSpeed * Time.deltaTime);
 
         transform.position += movementDirection;
+
+        //aimsing,looking
+        followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.x * aimSensitivity, Vector3.up);
+        followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.y * aimSensitivity, Vector3.left);
+
+        var angles = followTarget.transform.localEulerAngles;
+        angles.z = 0;
+
+        var angle = followTarget.transform.localEulerAngles.x;
+
+        if(angle > 180 && angle < 340)
+        {
+            angles.x = 340;
+        }
+        else if(angle < 180 && angle > 40)
+        {
+            angles.x = 40;
+        }
+
+        followTarget.transform.localEulerAngles = angles;
+
     }
 
     public void OnMovement(InputValue value)
