@@ -42,6 +42,30 @@ public class MovementComponent : MonoBehaviour
 
     void Update()
     {
+        //aimsing,looking
+        followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.x * aimSensitivity, Vector3.up);
+        followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.y * aimSensitivity, Vector3.left);
+
+        var angles = followTarget.transform.localEulerAngles;
+        angles.z = 0;
+
+        var angle = followTarget.transform.localEulerAngles.x;
+
+        if (angle > 180 && angle < 340)
+        {
+            angles.x = 340;
+        }
+        else if (angle < 180 && angle > 40)
+        {
+            angles.x = 40;
+        }
+
+        followTarget.transform.localEulerAngles = angles;
+
+        //rotate player based on look transform
+        transform.rotation = Quaternion.Euler(0, followTarget.transform.rotation.eulerAngles.y, 0);
+        followTarget.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
+
         //movement
         if (playerController.isJumping) return;
         if (!(inputVector.magnitude > 0)) moveDirection = Vector3.zero;
@@ -53,29 +77,6 @@ public class MovementComponent : MonoBehaviour
 
         transform.position += movementDirection;
 
-        //aimsing,looking
-        followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.x * aimSensitivity, Vector3.up);
-        followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.y * aimSensitivity, Vector3.left);
-
-        var angles = followTarget.transform.localEulerAngles;
-        angles.z = 0;
-
-        var angle = followTarget.transform.localEulerAngles.x;
-
-        if(angle > 180 && angle < 340)
-        {
-            angles.x = 340;
-        }
-        else if(angle < 180 && angle > 40)
-        {
-            angles.x = 40;
-        }
-
-        followTarget.transform.localEulerAngles = angles;
-
-        //rotate player based on look transform
-        transform.rotation = Quaternion.Euler(0, followTarget.transform.rotation.eulerAngles.y, 0);
-        followTarget.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
 
     }
 
