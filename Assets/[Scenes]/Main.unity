@@ -2036,11 +2036,6 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.5
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
---- !u!4 &896354033 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-  m_PrefabInstance: {fileID: 6673294809897528580}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -11932,7 +11927,6 @@ Transform:
   - {fileID: 1184798679451143491}
   - {fileID: 6567089734028099061}
   - {fileID: 1622434259}
-  - {fileID: 896354033}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12056,11 +12050,11 @@ GameObject:
   m_Component:
   - component: {fileID: 543450651694465837}
   - component: {fileID: 919132147972069784}
+  - component: {fileID: 8782744188536059438}
   - component: {fileID: 5866666019871381847}
   - component: {fileID: 4850740716981488417}
   - component: {fileID: 5053848300436056725}
   - component: {fileID: 4452664181663218923}
-  - component: {fileID: 8782744188536059438}
   - component: {fileID: 919132147972069788}
   m_Layer: 0
   m_Name: James
@@ -13590,67 +13584,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &6673294809897528580
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 543450651694465837}
-    m_Modifications:
-    - target: {fileID: 3057831097695396371, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_Name
-      value: AK47Prefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 3057831097695396371, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8067883645293286438, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
 --- !u!4 &6897084519106684955
 Transform:
   m_ObjectHideFlags: 0
@@ -14112,7 +14045,7 @@ MonoBehaviour:
   runSpeed: 10
   jumpForce: 5
   followTarget: {fileID: 1622434258}
-  aimSensitivity: 1
+  aimSensitivity: 0.5
 --- !u!4 &8948792008332343940
 Transform:
   m_ObjectHideFlags: 0
