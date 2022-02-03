@@ -17,6 +17,9 @@ public class MovementComponent : MonoBehaviour
     // References
     Vector2 inputVector = Vector2.zero;
     Vector3 moveDirection = Vector3.zero;
+    Vector2 lookInput = Vector3.zero;
+
+    public float aimSensitivity = 1.0f;
 
     // Animator Hashes
     public readonly int movementXHash = Animator.StringToHash("MovementX");
@@ -67,6 +70,27 @@ public class MovementComponent : MonoBehaviour
         playerController.isJumping = value.isPressed;
         rigidbody.AddForce((transform.up + moveDirection) * jumpForce, ForceMode.Impulse);
         playerAnimator.SetBool(isJumpingHash, playerController.isJumping);
+    }
+
+    public void OnAim(InputValue value)
+    {
+        playerController.isAiming = value.isPressed;
+    }
+
+    public void OnLook(InputValue value)
+    {
+        lookInput = value.Get<Vector2>();
+        //if aiming, adjust animations for mask to properly animate aim
+    }
+
+    public void OnFire(InputValue value)
+    {
+
+    }
+    
+    public void OnReload(InputValue value)
+    {
+
     }
 
     private void OnCollisionEnter(Collision collision)
