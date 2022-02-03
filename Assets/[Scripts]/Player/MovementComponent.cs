@@ -73,6 +73,10 @@ public class MovementComponent : MonoBehaviour
 
         followTarget.transform.localEulerAngles = angles;
 
+        //rotate player based on look transform
+        transform.rotation = Quaternion.Euler(0, followTarget.transform.rotation.eulerAngles.y, 0);
+        followTarget.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
+
     }
 
     public void OnMovement(InputValue value)
