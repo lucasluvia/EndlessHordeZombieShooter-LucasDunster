@@ -5,19 +5,33 @@ using UnityEngine;
 public class WeaponHolder : MonoBehaviour
 {
     [SerializeField] private GameObject weaponToSpawn;
-    [SerializeField] private GameObject weaponSocket;
+    [SerializeField] private GameObject weaponSocketLocation;
+    [SerializeField] private Transform gripIKSocketLocation;
 
-    private PlayerController playerController;
+    PlayerController playerController;
+    Animator animator;
     Sprite crosshairImage;
+    WeaponComponent equippedWeapon;
 
     void Start()
     {
-        GameObject spawnedWeapon = Instantiate(weaponToSpawn, weaponSocket.transform.position, weaponSocket.transform.rotation, weaponSocket.transform);
-        
+        animator = GetComponent<Animator>();
+        GameObject spawnedWeapon = Instantiate(weaponToSpawn, weaponSocketLocation.transform.position, weaponSocketLocation.transform.rotation, weaponSocketLocation.transform);
+
+        equippedWeapon = spawnedWeapon.GetComponent<WeaponComponent>();
+        equippedWeapon.Initialize(this);
+        gripIKSocketLocation = equippedWeapon.gripLocation;
     }
 
     void Update()
     {
         
     }
+
+    private void OnAnimatorIK(int LayerIndex)
+    {
+        animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
+        animator.SetIKPosition(AvatarIKGoal.LeftHand, gripIKSocketLocation.transform.position);
+    }
+
 }

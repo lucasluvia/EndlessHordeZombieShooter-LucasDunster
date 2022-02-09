@@ -12076,7 +12076,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponToSpawn: {fileID: 3057831097695396371, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
-  weaponSocket: {fileID: 504799905}
+  weaponSocketLocation: {fileID: 504799905}
+  gripIKSocketLocation: {fileID: 0}
 --- !u!54 &919132147972069788
 Rigidbody:
   m_ObjectHideFlags: 0
