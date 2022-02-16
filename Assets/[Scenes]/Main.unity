@@ -9851,10 +9851,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1577598249}
+  - component: {fileID: 1577598253}
   - component: {fileID: 1577598251}
   - component: {fileID: 1577598250}
+  - component: {fileID: 1577598252}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: AmmoPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9919,6 +9921,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577598248}
   m_CullTransparentMesh: 1
+--- !u!114 &1577598252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577598248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe407fd835ba2c40b90481e71243638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponNameText: {fileID: 1584582500}
+  currentAmmoCountText: {fileID: 849335432}
+  totalBulletCountText: {fileID: 1130532863}
+  weaponComponent: {fileID: 0}
+--- !u!114 &1577598253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577598248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe407fd835ba2c40b90481e71243638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponNameText: {fileID: 1584582500}
+  currentAmmoCountText: {fileID: 849335432}
+  totalBulletCountText: {fileID: 1130532863}
+  weaponComponent: {fileID: 0}
 --- !u!1 &1584582498
 GameObject:
   m_ObjectHideFlags: 0
