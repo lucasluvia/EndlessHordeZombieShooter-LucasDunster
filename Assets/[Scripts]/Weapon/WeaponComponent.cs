@@ -37,7 +37,11 @@ public struct WeaponStats
 public class WeaponComponent : MonoBehaviour
 {
     public Transform gripLocation;
+    public Transform firingEffectLocation;
+
     protected WeaponHolder weaponHolder;
+    [SerializeField] protected ParticleSystem firingEffect;
+
     public WeaponStats weaponStats;
 
     public bool isFiring = false;
@@ -48,6 +52,8 @@ public class WeaponComponent : MonoBehaviour
     void Awake()
     {
         mainCamera = Camera.main;
+        if (firingEffect)
+            firingEffect.Stop();
     }
 
     void Update()
@@ -89,6 +95,12 @@ public class WeaponComponent : MonoBehaviour
     {
         isFiring = false;
         CancelInvoke(nameof(FireWeapon));
+
+        if(firingEffect)
+        {
+            firingEffect.Stop();
+        }
+
     }
 
     protected virtual void FireWeapon() 
@@ -110,6 +122,11 @@ public class WeaponComponent : MonoBehaviour
 
     protected virtual void ReloadWeapon()
     {
+        if (firingEffect)
+        {
+            firingEffect.Stop();
+        }
+
         int bulletsToReload = weaponStats.clipSize - weaponStats.totalBullets;
         if (bulletsToReload < 0)
         {
