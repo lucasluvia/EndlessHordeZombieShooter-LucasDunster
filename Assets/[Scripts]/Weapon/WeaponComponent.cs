@@ -27,6 +27,7 @@ public struct WeaponStats
     public float damage;
     public int bulletsInClip;
     public int clipSize;
+    public int totalBullets;
     public float fireStartDelay;
     public float fireRate;
     public float fireDistance;
@@ -92,9 +93,33 @@ public class WeaponComponent : MonoBehaviour
 
     protected virtual void FireWeapon() 
     {
-        Debug.Log("Firing " + weaponStats.weaponName);
+        //Debug.Log("Firing " + weaponStats.weaponName);
         weaponStats.bulletsInClip--;
     }
 
+    public virtual void StartReloading()
+    {
+        isReloading = true;
+        ReloadWeapon();
+    }
 
+    public virtual void StopReloading()
+    {
+        isReloading = false;
+    }
+
+    protected virtual void ReloadWeapon()
+    {
+        int bulletsToReload = weaponStats.clipSize - weaponStats.totalBullets;
+        if (bulletsToReload < 0)
+        {
+            weaponStats.bulletsInClip = weaponStats.clipSize;
+            weaponStats.totalBullets -= weaponStats.clipSize;
+        }
+        else
+        {
+            weaponStats.bulletsInClip = weaponStats.totalBullets;
+            weaponStats.totalBullets = 0;
+        }
+    }
 }

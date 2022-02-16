@@ -31,6 +31,7 @@ public class AK47Component : WeaponComponent
                 Vector3 hitDirection = hit.point - mainCamera.transform.position;
                 Debug.DrawRay(mainCamera.transform.position, hitDirection.normalized * weaponStats.fireDistance, Color.red, 1);
             }
+            Debug.Log("Bullet count: " + weaponStats.bulletsInClip);
         }
         else if(weaponStats.bulletsInClip <= 0)
         {
