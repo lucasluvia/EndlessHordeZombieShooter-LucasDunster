@@ -27,6 +27,7 @@ public class MovementComponent : MonoBehaviour
     public readonly int movementYHash = Animator.StringToHash("MovementY");
     public readonly int isJumpingHash = Animator.StringToHash("IsJumping");
     public readonly int isRunningHash = Animator.StringToHash("IsRunning");
+    public readonly int verticalAimHash = Animator.StringToHash("AimVertical");
 
     private void Awake()
     {
@@ -95,6 +96,9 @@ public class MovementComponent : MonoBehaviour
 
     public void OnJump(InputValue value)
     {
+        if (playerController.isJumping)
+            return;
+
         playerController.isJumping = value.isPressed;
         rigidbody.AddForce((transform.up + moveDirection) * jumpForce, ForceMode.Impulse);
         playerAnimator.SetBool(isJumpingHash, playerController.isJumping);
@@ -109,6 +113,9 @@ public class MovementComponent : MonoBehaviour
     {
         lookInput = value.Get<Vector2>();
         //if aiming, adjust animations for mask to properly animate aim
+        //340,40
+        float lookParam = Mathf.InverseLerp(40, 340, followTarget.transform.localEulerAngles.x);
+        playerAnimator.SetFloat(verticalAimHash, lookParam);
     }
 
     private void OnCollisionEnter(Collision collision)
