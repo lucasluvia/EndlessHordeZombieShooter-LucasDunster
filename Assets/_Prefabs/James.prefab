@@ -1527,10 +1527,10 @@ GameObject:
   - component: {fileID: 7674921957238207793}
   - component: {fileID: 3362876029045719028}
   - component: {fileID: 6595714557197881414}
-  - component: {fileID: 6595714557197881410}
+  - component: {fileID: 1743977753}
   m_Layer: 0
   m_Name: James
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1628,6 +1628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598f9550fc6bc4a48852c75daab6533f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 250
+  maxHealth: 250
 --- !u!114 &7674921957238207793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,7 +1680,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &6595714557197881410
+--- !u!114 &1743977753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1687,13 +1689,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6595714557197881421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55059f617fc03f44ab5f76526d628e21, type: 3}
+  m_Script: {fileID: 11500000, guid: ed035f9bf92b2bf49b9fb8dfeea16b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponToSpawn: {fileID: 2880224734579864047, guid: 8cd76aa65d01d934a81ce6650e575969, type: 3}
-  playerController: {fileID: 0}
+  weaponToSpawn: {fileID: 3057831097695396371, guid: 912921d1e00c6184d97b0a643929e25a, type: 3}
   weaponSocketLocation: {fileID: 6289776745642326215}
-  gripIKSocketLocation: {fileID: 0}
+  gripIKSocketLocation: {fileID: 6289776746644071501}
+  playerController: {fileID: 7674921957238207793}
 --- !u!1 &6611994655922755504
 GameObject:
   m_ObjectHideFlags: 0

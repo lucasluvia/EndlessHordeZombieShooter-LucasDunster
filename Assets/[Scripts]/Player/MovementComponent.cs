@@ -61,7 +61,7 @@ public class MovementComponent : MonoBehaviour
             angles.x = 40;
         }
 
-        Debug.Log(angles.x);
+        //Debug.Log(angles.x);
 
         followTarget.transform.localEulerAngles = angles;
 
