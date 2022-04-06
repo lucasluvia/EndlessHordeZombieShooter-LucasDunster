@@ -24,17 +24,17 @@ public class InventoryCanvas : GameHUDWidget
 
     private void OnEnable()
     {
-        //if (!PlayerController || !PlayerController.inventory) return;
-        //if (PlayerController.inventory.GetItemCount() <= 0) return;
+        if (!PlayerController || !PlayerController.inventory) return;
+        if (PlayerController.inventory.GetItemCount() <= 0) return;
 
-        //ItemDisplayPanel.PopulatePanel(PlayerController.inventory.GetItemsOfCategory(ItemCategory.None));
+        ItemDisplayPanel.PopulatePanel(PlayerController.inventory.GetItemsOfCategory(ItemCategory.None));
     }
 
     public void SelectCategory(ItemCategory category)
     {
-        //if (!PlayerController || !PlayerController.inventory) return;
-        //if (PlayerController.inventory.GetItemCount() <= 0) return;
+        if (!PlayerController || !PlayerController.inventory) return;
+        if (PlayerController.inventory.GetItemCount() <= 0) return;
 
-        //ItemDisplayPanel.PopulatePanel(PlayerController.inventory.GetItemsOfCategory(category));
+        ItemDisplayPanel.PopulatePanel(PlayerController.inventory.GetItemsOfCategory(category));
     }
 }
