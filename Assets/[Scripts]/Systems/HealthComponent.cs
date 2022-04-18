@@ -20,16 +20,23 @@ public class HealthComponent : MonoBehaviour, IDamageable
 
     public virtual void Destroy()
     {
-        Destroy(gameObject);
+        
+        //Destroy(gameObject);
     }
 
     public virtual void TakeDamage(float damage)
     {
+        Debug.Log(currentHealth + " " +  damage);
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            Destroy();
+            Destroy(); 
+            Debug.Log("Destroy " + gameObject.name);
         }
+
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+
     }
 
 

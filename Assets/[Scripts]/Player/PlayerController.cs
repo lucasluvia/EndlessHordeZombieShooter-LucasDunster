@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public bool isJumping;
     public bool isRunning;
     public bool isAiming;
+    public bool isPlacing;
 
     public InventoryComponent inventory;
 

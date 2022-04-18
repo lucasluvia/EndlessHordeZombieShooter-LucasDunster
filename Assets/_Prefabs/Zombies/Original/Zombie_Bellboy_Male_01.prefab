@@ -2996,7 +2996,7 @@ GameObject:
   - component: {fileID: 137694054147993012}
   m_Layer: 0
   m_Name: Zombie_Bellboy_Male_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3296,9 +3296,10 @@ GameObject:
   - component: {fileID: 1249547856}
   - component: {fileID: 1249547858}
   - component: {fileID: 1249547859}
+  - component: {fileID: 1399279839}
   m_Layer: 0
   m_Name: Zombie_Bellboy_Male_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3466,6 +3467,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 150
   maxHealth: 150
+--- !u!136 &1399279839
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418193975600942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1423411692011380
 GameObject:
   m_ObjectHideFlags: 0
@@ -6554,7 +6569,7 @@ GameObject:
   - component: {fileID: 4101432036228654}
   m_Layer: 0
   m_Name: Root
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

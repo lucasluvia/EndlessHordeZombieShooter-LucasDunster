@@ -9,6 +9,11 @@ public class MovementComponent : MonoBehaviour
     [SerializeField] float runSpeed = 10.0f;
     [SerializeField] float jumpForce = 5.0f;
 
+    //Turret
+    [SerializeField] Transform turretSpawn;
+    [SerializeField] Transform turretParent;
+    [SerializeField] GameObject turretPrefab;
+
     // Components
     private PlayerController playerController;
     Rigidbody rigidbody;
@@ -28,6 +33,7 @@ public class MovementComponent : MonoBehaviour
     public readonly int isJumpingHash = Animator.StringToHash("IsJumping");
     public readonly int isRunningHash = Animator.StringToHash("IsRunning");
     public readonly int verticalAimHash = Animator.StringToHash("AimVertical");
+    public readonly int isPlacingHash = Animator.StringToHash("IsPlacing");
 
     private void Awake()
     {
@@ -120,11 +126,26 @@ public class MovementComponent : MonoBehaviour
         playerAnimator.SetFloat(verticalAimHash, lookParam);
     }
 
+    public void OnPlace(InputValue value)
+    {
+        if (GameObject.FindWithTag("Turret") == null)
+        {
+            Instantiate(turretPrefab, turretSpawn.position, turretSpawn.rotation, turretParent);
+        }
+
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        
+
         if (!collision.gameObject.CompareTag("Ground") && !playerController.isJumping) return;
 
         playerController.isJumping = false;
         playerAnimator.SetBool(isJumpingHash, false);
+
+
     }
+
+
 }

@@ -1550,6 +1550,7 @@ Transform:
   - {fileID: 894874859869877295}
   - {fileID: 6289776746314541065}
   - {fileID: 6289776746644071501}
+  - {fileID: 7986341574986575823}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1647,6 +1648,8 @@ MonoBehaviour:
   isJumping: 0
   isRunning: 0
   isAiming: 0
+  isPlacing: 0
+  inventory: {fileID: 0}
 --- !u!114 &3362876029045719028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1662,6 +1665,9 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   jumpForce: 5
+  turretSpawn: {fileID: 7986341574986575823}
+  turretParent: {fileID: 0}
+  turretPrefab: {fileID: 3735646666471700113, guid: 7e7a69eb370b19446a50d6b0611ca111, type: 3}
   followTarget: {fileID: 6289776746314541064}
   aimSensitivity: 0.1
 --- !u!54 &6595714557197881414
@@ -1941,6 +1947,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8437180087073318075}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7404879797778551363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7986341574986575823}
+  m_Layer: 0
+  m_Name: TurretSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7986341574986575823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7404879797778551363}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5819635731447368439}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7485127957706088538
 GameObject:
